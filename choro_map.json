@@ -1,0 +1,51 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 400,
+    "title": "Median weekly earnings by state 2022",
+    "projection": {
+      "type": "equalEarth"
+    },
+    "data": {
+      "url": "detail_map.json",
+      "format": {
+        "type": "topojson",
+        "feature": "STE_2021_AUST_GDA2020"
+      }
+    },
+
+    "params": [{
+      "name": "pts",
+      "select": {"type": "point", "toggle": false}
+    }],
+
+    "transform": [
+      {
+        "lookup": "properties.STE_NAME21",
+        "from": {
+          "data": {
+            "url": "Median Weekly Earnings By State.csv"
+          },
+          "key": "State",
+          "fields": ["earning"]
+        }
+      }
+    ],
+
+    "mark": {
+      "type": "geoshape",
+      "color": "orange"
+    },
+    "encoding": {
+      "color": {
+        "condition": {
+          "param": "pts",
+          "field": "earning",
+          "type": "quantitative",
+          "scale": {"scheme": "yelloworangebrown"}
+        },
+        "value": "grey"
+      },
+      "tooltip": [{"field": "earning", "title": "Median weekly earning", "format": "$.2f"}, {"field": "properties.STE_NAME21", "title": "State"}]
+    }
+  }

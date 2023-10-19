@@ -1,0 +1,99 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 400,
+  "data": {
+    "url": "Median personal income by years.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "params": [{
+    "name": "State_selection",
+    "bind": {
+      "input": "select",
+      "options": [
+        null,
+        "Australian Capital Territory",
+        "Northern Territory",
+        "Western Australia",
+        "New South Wales",
+        "Victoria",
+        "Queensland",
+        "South Australia",
+        "Tasmania"
+      ],
+      "labels": [
+        "Show All",
+        "Australian Capital Territory",
+        "Northern Territory",
+        "Western Australia",
+        "New South Wales",
+        "Victoria",
+        "Queensland",
+        "South Australia",
+        "Tasmania"
+      ],
+      "name": "State Selection: "
+    }
+  }],
+  "transform": [
+    {
+      "filter": "State_selection == null || datum.State == State_selection"
+    }
+  ],
+  "layer": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal",
+          "title": "Year"
+        },
+        "y": {
+          "field": "Median_earning",
+          "type": "quantitative",
+          "title": " Median Personal Income per year"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.State == State_selection",
+            "value": "orange"
+          },
+          "field": "State",
+          "type": "nominal",
+          "title": "State"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "Median_earning",
+          "type": "quantitative"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.State == State_selection",
+            "value": "orange"
+          },
+          "field": "State",
+          "type": "nominal"
+        },
+        "tooltip": [
+          {"field": "State", "type": "nominal"},
+          {"field": "Year", "type": "ordinal"},
+          {"field": "Median_earning", "type": "quantitative", "format": "$.2f", "title": "Median Personal Income"}
+        ]
+      }
+    }
+  ],
+  "title": "Personal Income of Each State Over Years"
+}
+

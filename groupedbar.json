@@ -1,0 +1,41 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "Median weekly earnings by educatinal qualification.csv"
+  },
+  "spacing": 10,
+  "facet": {
+    "column": {
+      "field": "Gender",
+      "type": "nominal",
+      "header": {"labelAngle": 0, "labelAlign": "center"}
+    }
+  },
+  "spec": {
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "Qualification",
+        "type": "nominal",
+        "title": "Qualification",
+        "axis": {"grid": false}
+      },
+      "y": {
+        "field": "Earning",
+        "type": "quantitative",
+        "title": "Median Weekly Earning"
+      },
+      "color": {
+        "field": "Gender",
+        "legend": null
+      },
+      "tooltip": [
+        {"field": "Qualification", "type": "nominal"},
+        {"field": "Weekly Earning", "type": "quantitative", "format": "$.2f"},
+        {"field": "Gender", "type": "nominal"}
+      ]
+    }
+  }
+}
+
+
