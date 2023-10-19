@@ -31,7 +31,7 @@
       },
       "tooltip": [
         {"field": "Qualification", "type": "nominal"},
-        {"field": "Weekly Earning", "type": "quantitative", "format": "$.2f"},
+        {"field": "Earning", "type": "quantitative", "format": "$.2f"},
         {"field": "Gender", "type": "nominal"}
       ]
     }
