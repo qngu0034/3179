@@ -1,0 +1,42 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 400,
+    "data": {
+      "url": "median by industry and year.csv"
+    },
+    "params": [{
+        "name": "Year_selection",
+        "bind": {
+          "input": "select",
+          "options": [
+            null,
+            2017,
+            2022
+          ],
+          "labels": [
+            "None",
+            "2017",
+            "2022"
+          ],
+          "name": "Year Selection: "
+        }
+      }],
+      "transform": [
+        {
+          "filter": "datum.Year == Year_selection"
+        }
+      ],
+    "mark": "bar",
+    "encoding": {
+    "x": {"field": "Industry", "type": "nominal", "title": "Industry"},
+    "y": {"field": "Earning", "type": "quantitative", "title": "Median Weekly Earning"},
+    "color": {"value": "orange"},
+    "tooltip": [
+        {"field": "Industry", "type": "nominal"},
+        {"field": "Earning", "type": "quantitative", "format": "$.2f"}
+      ]
+  }
+  }
+  
+  
