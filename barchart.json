@@ -3,7 +3,7 @@
     "width": 800,
     "height": 400,
     "data": {
-      "url": "median by industry and year.csv"
+      "url": "https://raw.githubusercontent.com/qngu0034/3179/main/median%20by%20industry%20and%20year.csv"
     },
     "params": [{
         "name": "Year_selection",

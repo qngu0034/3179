@@ -7,7 +7,7 @@
       "type": "equalEarth"
     },
     "data": {
-      "url": "detail_map.json",
+      "url": "https://raw.githubusercontent.com/qngu0034/3179/main/detail_map.json",
       "format": {
         "type": "topojson",
         "feature": "STE_2021_AUST_GDA2020"
@@ -24,7 +24,7 @@
         "lookup": "properties.STE_NAME21",
         "from": {
           "data": {
-            "url": "Median Weekly Earnings By State.csv"
+            "url": "https://raw.githubusercontent.com/qngu0034/3179/main/Median%20weekly%20earnings%20by%20state.csv"
           },
           "key": "State",
           "fields": ["earning"]

@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {
-    "url": "Median weekly earnings by educatinal qualification.csv"
+    "url": "https://raw.githubusercontent.com/qngu0034/3179/main/Median%20weekly%20earnings%20by%20educatinal%20qualification.csv"
   },
   "spacing": 10,
   "facet": {

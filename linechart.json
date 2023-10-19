@@ -3,7 +3,7 @@
   "width": 800,
   "height": 400,
   "data": {
-    "url": "Median personal income by years.csv",
+    "url": "https://raw.githubusercontent.com/qngu0034/3179/main/Median%20personal%20income%20by%20years.csv",
     "format": {
       "type": "csv"
     }
